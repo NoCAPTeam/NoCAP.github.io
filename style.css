@@ -32,6 +32,8 @@ header > * {
 }
 
 #menu {
+  position: absolute;
+  z-index: 5;
   height: 100vh;
   min-height: -webkit-fill-available;
   height: calc(var(--vh, 1vh) * 100);
@@ -41,12 +43,30 @@ header > * {
     rgba(75, 28, 31, 0.85) 0%,
     rgba(63, 33, 34, 0.85) 100%
   );
-  position: absolute;
-  z-index: 5;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   display: none;
+}
+
+.logo {
+  max-width: 65%;
+  margin: 0px auto;
+}
+
+.logo img {
+  max-width: 100%;
+}
+
+.logo ~ h4 {
+  font: 400 1.125rem "Oswald", sans-serif;
+  color: #66071b;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.logo ~ p {
+  color: #66071b;
 }
 
 #linkCont {
@@ -206,7 +226,8 @@ p {
 }
 
 .img-cont {
-  max-width: 20%;
+  max-width: 25%;
+  margin: 2rem auto;
 }
 
 .img-cont img {
@@ -273,10 +294,15 @@ p {
 }
 
 #lobby,
-#irresponse,
-#nxtStep {
+#irresponse {
   display: none;
 }
+
+/* #nxtStep,
+#socials {
+  visibility: hidden;
+  display: none;
+} */
 
 .popups {
   text-decoration: underline;
