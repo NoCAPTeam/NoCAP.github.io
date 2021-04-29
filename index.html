@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <!--
+To do:
 Media queries-
 Hamburger menu/site nav-
 Text animations (animate.css)-
 Fish background (w/ animations?)-
+Update metadata (HTML, .json)
 Margins, padding, spacing
 Flexbox image & text arrangement
 Text styles
@@ -12,10 +14,9 @@ Compress images
 Update all text/image content
 Call-to-action section
 Add water level GIF & background change animation
+Call-to-action section
+Intro footer
 
-Add hidden/revealed CTA section*
-Call-to-action section*
-Learn More pop-ups in gov't section*
 Finalize circle packing section*
 
 Implement additional shazam
@@ -38,11 +39,24 @@ Implement additional shazam
 
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <script src="main.js"></script>
+    <script
+      async
+      src="https://platform.twitter.com/widgets.js"
+      charset="utf-8"
+    ></script>
 
     <title>Static Template</title>
   </head>
 
   <body>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0"
+      nonce="kf1YTDf9"
+    ></script>
     <header class="txtDark">
       <audio id="audio" autoplay loop>
         <source
@@ -78,32 +92,33 @@ Implement additional shazam
     </header>
 
     <nav id="menu" hidden="true">
-        <ul id="linkCont">
-            <a id="intro">
-              <li>
-                <h3>No C.A.P.</h3>
-                <p>Greenhouse Gas Overview</p>
-              </li>
-            </a>
-            <a id="who">
-              <li>
-                <h3>Who Is Responsible</h3>
-                <p>Corporate Accountability</p>
-              </li>
-            </a>
-            <a id="how">
-              <li>
-                <h3>How Is This Happening?</h3>
-                <p>Government Responsibility</p>
-            </li>
-            </a>
-            <a id="what">
-              <li>
-                <h3>What Can You Do?</h3>
-                <p>Spread the Word</p>
-              </li>
-            </a>
-          </ul>
+      <figure class="logo"><img src="images/logo_pink.png" /></figure>
+      <ul id="linkCont">
+        <a id="intro">
+          <li>
+            <h3>No C.A.P.</h3>
+            <p>Greenhouse Gas Overview</p>
+          </li>
+        </a>
+        <a id="who">
+          <li>
+            <h3>Who Is Responsible</h3>
+            <p>Corporate Accountability</p>
+          </li>
+        </a>
+        <a id="how">
+          <li>
+            <h3>How Is This Happening?</h3>
+            <p>Government Responsibility</p>
+          </li>
+        </a>
+        <a id="what">
+          <li>
+            <h3>What Can You Do?</h3>
+            <p>Spread the Word</p>
+          </li>
+        </a>
+      </ul>
       <script>
         function toggleMenu() {
           if (menu.hidden == true) {
@@ -170,11 +185,13 @@ Implement additional shazam
     <main class="scroll-container parallax">
       <div class="scroll-center txtDark" id="1">
         <section class="content parallax__group">
-          <h1>No C.A.P.</h1>
-          <p>No Corporate Accountability Present</p>
-          <p>
+          <figure class="logo"><img src="images/logo_grad.png" /></figure>
+          <h4>
+            No Corporate Accountability Present
+          </h4>
+          <p style="color: #66071b;">
             Greenhouse gas emissions are killing our planet and corporations are
-            at fault.
+            at fault. Learn more about how emissions affect our planet.
           </p>
         </section>
       </div>
@@ -432,17 +449,29 @@ Implement additional shazam
           popups[i].addEventListener("click", function () {
             switch (i) {
               case 0:
-                console.log("click");
-                irre.style.display = "block";
+                console.log(irre.style.display);
+                //
+                if (irre.style.display == "" || irre.style.display == "none") {
+                  console.log("invisible");
+                  irre.style.display = "block";
+                } else {
+                  console.log("visible");
+                  irre.style.display = "none";
+                }
 
                 break;
               case 1:
-                console.log("click");
-                if (lobby.style.display === "none") {
+                if (
+                  lobby.style.display == "" ||
+                  lobby.style.display == "none"
+                ) {
+                  console.log("invisible");
                   lobby.style.display = "block";
                 } else {
-                  lobby.style.display === "none";
+                  console.log("visible");
+                  lobby.style.display = "none";
                 }
+
                 break;
             }
           });
@@ -532,29 +561,49 @@ Implement additional shazam
           <h2>Next Steps</h2>
           <div id="socials">
             <a
-              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+              href="https://nocapteam.github.io/"
               class="twitter-share-button"
               data-show-count="false"
               >Tweet</a
             >
-            <script
-              async
-              src="https://platform.twitter.com/widgets.js"
-              charset="utf-8"
-            ></script>
+
+            <div
+              class="fb-share-button"
+              data-href="https://nocapteam.github.io/"
+              data-layout="button"
+              data-size="small"
+            >
+              <a
+                target="_blank"
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+                class="fb-xfbml-parse-ignore"
+                >Share</a
+              >
+            </div>
           </div>
+          <a class="twtTrig" href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Static%20Template&tw_p=tweetbutton&url=file%3A%2F%2F%2FUsers%2FHuggie%2FDesktop%2Fcapstone%2Findex.html">Actual Tweet</a>
           <script>
             let nextButton = document.querySelector("#nxtBut");
             let nextStep = document.querySelector("#nxtStep");
+            let soc = document.querySelector("#socials");
             nextButton.addEventListener("click", function () {
-              nextStep.style.display = "block";
+              nextStep.style.visibility = "visible";
+              soc.style.visibility = "visible";
+              // nextStep.style.display = "block";
+              // soc.style.display = "block";
             });
+
+            // let twtBut = document.querySelector(".twtTrig");
+            // twtBut.addEventListener("click", function(){
+            //   document.querySelector("#b").click();
+            //   console.log("Pressed");
+            // })
           </script>
         </section>
       </div>
     </main>
     <!-- <footer class="txtDark">
-      <h4>Scroll to Discover</h4>
+      <h4>Take a Dive</h4>
     </footer> -->
   </body>
 </html>
