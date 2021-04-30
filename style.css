@@ -545,6 +545,10 @@ button {
     margin: 0 -2rem;
   }
 
+  .bg-vid video {
+    min-width: 100%;
+  }
+
   .waterRise {
     margin: 0px;
   }

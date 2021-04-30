@@ -635,6 +635,7 @@ Water level GIF
               </video>
             </div>
             <h2>Next Steps</h2>
+            <h2 id="stink">""</h2>
             <div id="socials">
               <a
                 href="https://nocapteam.github.io/"
@@ -675,6 +676,16 @@ Water level GIF
                 nextStep.style.display = "block";
                 video.play();
               });
+
+              let stink = document.querySelector("#stink");
+              video.addEventListener('ended', (event) => {
+                console.log('Ended.');
+                stink.innerHTML = 'Ended.';
+              });
+              video.onplaying = (e) => {
+                console.log('Now playing.');
+                stink.innerHTML = 'Now playing.';
+              }
             </script>
           </section>
         </div>
