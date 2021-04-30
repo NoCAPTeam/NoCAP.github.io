@@ -85,8 +85,9 @@ Water level GIF
         </audio>
         <figure>
           <img id="volume" src="images/volume.png" />
-          <p id="mobAudio">Tap here for audio</p>
         </figure>
+
+        <p id="mobAudio">Tap Here for Audio</p>
 
         <script>
           let volume = document.querySelector("#volume");
@@ -629,7 +630,7 @@ Water level GIF
         <div id="nxtStep" class="scroll-center parallax__group z1 txtDark">
           <section class="content parallax__group">
             <div class="bg-vid parallax__layer parallax__layer--base">
-              <video id="video" autoplay preload muted>
+              <video id="video" playsinline autoplay preload muted>
                 <source src="images/water_receding.mp4" type="video/mp4" />
               </video>
             </div>
@@ -672,7 +673,7 @@ Water level GIF
                 //nextStep.style.visibility = "visible";
 
                 nextStep.style.display = "block";
-                video.play();
+                //video.play();
               });
             </script>
           </section>

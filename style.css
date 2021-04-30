@@ -41,23 +41,24 @@ header {
   position: absolute;
   top: 0px;
   width: 100%;
+  padding: 0 0.5rem;
   z-index: 4;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 header > * {
   width: 2rem;
-  height: 2rem;
+  max-height: 2rem;
   margin: 0.5rem;
-}
-
-#volume {
-  max-width: 100%;
 }
 
 #mobAudio {
   display: block;
+  margin: auto;
+  margin-left: 0px;
+  width: 50vw;
 }
 
 #menu {
@@ -502,6 +503,14 @@ button {
 }
 
 @media (min-width: 801px) {
+  html {
+    font-size: 16px;
+  }
+
+  #menu .logo {
+    margin: 2rem 33%;
+  }
+
   .disclaimer {
     display: block;
     flex-shrink: 1;
@@ -526,5 +535,24 @@ button {
 
   #mobAudio {
     display: none;
+  }
+
+  .content {
+    margin: 0 2rem;
+  }
+
+  .bg-vid {
+    margin: 0 -2rem;
+  }
+
+  .waterRise {
+    margin: 0px;
+  }
+
+  .waterRise h2,
+  .box1 > *,
+  .box2 > * {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
 }
