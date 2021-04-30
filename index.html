@@ -630,8 +630,8 @@ Water level GIF
         <div id="nxtStep" class="scroll-center parallax__group z1 txtDark">
           <section class="content parallax__group" id="5">
             <div class="bg-vid parallax__layer parallax__layer--base">
-              <video id="video" poster="images/green_future.png" playsinline preload muted>
-                <source src="images/water_receding.mp4" type="video/mp4" />
+              <video id="vid" poster="images/green_future.png" src="images/water_receding.mp4" type="video/mp4" playsinline preload muted>
+                <!-- <source src="images/water_receding.mp4" type="video/mp4" /> -->
               </video>
             </div>
             <h2>Next Steps</h2>
@@ -669,38 +669,33 @@ Water level GIF
             <script>
               let nextButton = document.querySelector("#nxtBut");
               let nextStep = document.querySelector("#nxtStep");
-              let video = document.querySelector("#video");
+              let vid = document.querySelector("#vid");
               nextButton.addEventListener("click", function () {
                 nextStep.style.display = "block";
-                video.play();
+                vid.play();
                 document.getElementById("5").scrollIntoView({ behavior: "smooth" });
               });
 
               let stink = document.querySelector("#stink");
-              video.onended = (e) => {
-                console.log('Ended.');
-                stink.innerHTML = 'Ended.';
-              }
-              video.onplay = (e) => {
-                console.log('Now playing.');
-                stink.innerHTML = 'Now playing.';
-              }
-              video.onloadeddata = (e) => {
-                console.log('Data loaded.');
-                stink.innerHTML = 'Data loaded.';
-              }
-              video.onwaiting = (e) => {
+              vid.onwaiting = (e) => {
                 console.log('Waiting');
                 stink.innerHTML = 'Waiting';
               }
-              video.onsuspend = (e) => {
+              vid.onsuspend = (e) => {
                 console.log('Suspended');
                 stink.innerHTML = 'Suspended';
-                // video.load();
               }
-              video.onemptied = (e) => {
-                console.log('Emptied');
-                stink.innerHTML = 'Emptied';
+              vid.onloadeddata = (e) => {
+                console.log('Data loaded.');
+                stink.innerHTML = 'Data loaded.';
+              }
+              vid.onplay = (e) => {
+                console.log('Now playing.');
+                stink.innerHTML = 'Now playing.';
+              }
+              vid.onended = (e) => {
+                console.log('Ended.');
+                stink.innerHTML = 'Ended.';
               }
             </script>
           </section>
