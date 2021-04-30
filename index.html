@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <!--
-To do:
-Media queries-
-Hamburger menu/site nav-
-Text animations (animate.css)
-Fish background images
-Button click -> CTA scroll transition
-CTA z-index fix
-Hijack social media links
-Call-to-action section
-
-Margins, padding, spacing
+Necessary:
 Flexbox image & text arrangement
+Call-to-action section
+Update HTML metadata
+Hijack social media links
+
+Necessary & quick:
 Text styles up to date
 Text box & button styles
-Update header icons
+Update header icons & buttons
+Intro "take a dive" footer - add chevron, click function that scrolls to first section
 
+Necessary - do last:
 Update all text/image content
 Compress images
 
-Intro "take a dive" footer - add chevron, click function that scrolls to first section
-Update HTML metadata 
-Fix scroll snap issue w/ extra space @ bottom
-Circlepacking proofreading & addition of "metric tons"
+----------
+
+
+Media queries-
+CTA z-index fix-
+Text animations (animate.css)
+Fish background images
+Nav decoration-
 
 Implement additional shazam:
 QR code in wide media queries
@@ -36,6 +37,11 @@ Water level GIF
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta property="og:title" content="No C.A.P. - " />
+    <meta property="og:type" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:description" content="" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -87,7 +93,7 @@ Water level GIF
           <img id="volume" src="images/volume.png" />
         </figure>
 
-        <p id="mobAudio">Tap Here 4 Audio</p>
+        <p id="mobAudio">Tap Here for Audio</p>
 
         <script>
           let volume = document.querySelector("#volume");
@@ -183,7 +189,7 @@ Water level GIF
               menuButton.classList.toggle("change");
             }
           }
-          
+
           menuButton.addEventListener("click", toggleMenu);
 
           document.querySelector("#intro").onclick = (e) => {
@@ -206,7 +212,7 @@ Water level GIF
           function navBold() {
             scrollPos = document.querySelector(".scroll-container").scrollTop;
             bullets = document.getElementsByClassName("bullet");
-            if (document.body.clientWidth <= 800){
+            if (document.body.clientWidth <= 800) {
               if (scrollPos < window.innerHeight * 6) {
                 clearBoldClass();
                 document.getElementById("intro").classList.add("boldAnc");
@@ -230,7 +236,7 @@ Water level GIF
                 document.getElementById("what").classList.add("boldAnc");
                 bullets[3].classList.add("big");
               }
-            } else if (document.body.clientWidth > 800){
+            } else if (document.body.clientWidth > 800) {
               newWinHeight = document.querySelector(".wrapper").clientHeight;
               if (scrollPos < newWinHeight * 6) {
                 clearBoldClass();
@@ -257,6 +263,7 @@ Water level GIF
               }
             }
           }
+
           function clearBoldClass() {
             let links = document.getElementById("linkCont").children;
             for (let link of links) {
@@ -430,9 +437,10 @@ Water level GIF
             <figure class="img-cont"><img src="images/lightbulb.png" /></figure>
             <h2>POWER PLANTS</h2>
             <p class="boxMid">
-              Our electricity comes from
-              <b>power plants, the greatest polluters</b> of GHG emissions.
-              Responible for <b>58.5%</b> from all sectors.
+              Electricity comes from power plants, the
+              <b>greatest polluters</b> of GHG emissions. They contribute
+              <b>over a billion</b> metric tons of CO2e annually and pollute
+              more CO2 than all other sectors combined.
             </p>
             <button>LEARN MORE</button>
           </section>
@@ -443,9 +451,10 @@ Water level GIF
             <figure class="img-cont"><img src="images/helmet.png" /></figure>
             <h2>PETROLEUM AND NATURAL GAS</h2>
             <p class="boxMid">
-              Our electricity comes from
-              <b>power plants, the greatest polluters</b> of GHG emissions.
-              Responible for <b>58.5%</b> from all sectors.
+              Oil and gas giants like <b>BP</b> and <b>ExxonMobil</b> are part
+              of this high emitting sector. In 2019 alone, petroleum and natural
+              gas companies released over <b>341 million</b> metric tons of
+              CO2e, similar to GHGs from <b>74 million cars.</b>
             </p>
             <button>LEARN MORE</button>
           </section>
@@ -456,9 +465,10 @@ Water level GIF
             <figure class="img-cont"><img src="images/oil.png" /></figure>
             <h2>REFINERIES</h2>
             <p class="boxMid">
-              Our electricity comes from
-              <b>power plants, the greatest polluters</b> of GHG emissions.
-              Responible for <b>58.5%</b> from all sectors.
+              Refineries are facilities that turn raw materials, such as crude
+              oil, into a desired product, like gasoline. It’s 2019 CO2e is
+              equal to the CO2 emissions from
+              <b>412 million barrels of crude oil.</b>
             </p>
             <button>LEARN MORE</button>
           </section>
@@ -469,9 +479,10 @@ Water level GIF
             <figure class="img-cont"><img src="images/bottle.png" /></figure>
             <h2>CHEMICALS</h2>
             <p class="boxMid">
-              Our electricity comes from
-              <b>power plants, the greatest polluters</b> of GHG emissions.
-              Responible for <b>58.5%</b> from all sectors.
+              Plastics, pharmaceuticals, and clothing all come from the chemical
+              sector. It polluted <b>186 million</b> metric tons of CO2e in
+              2019! That’s equivalent to the energy use of
+              <b>22.3 million homes</b>!
             </p>
             <button>LEARN MORE</button>
           </section>
@@ -505,14 +516,13 @@ Water level GIF
           <section class="content parallax__group">
             <h2>STATE IRRESPONSIBILITY</h2>
             <p class="boxDark">
-              <a class="popups">We’ve</a> known for a while that we need
-              comprehensive action, but only a handful of states have actually
-              taken action. Even in states where it has been more successful,
-              such as California, there are still setbacks.
+              In 2005, the U.S. Senate determined that Congress must pass
+              <a class="statePopups">comprehensive climate policies</a>. Since
+              then, <a class="statePopups">only 12 states</a> have made policies
+              with <a class="statePopups">varying success</a>.
             </p>
-            <p id="irresponse" class="boxDark">
-              year
-            </p>
+            <h3 id="irrHead"></h3>
+            <div id="irresponse" class="boxDark"></div>
             <button>CALIFORNIA CASE STUDY</button>
           </section>
         </div>
@@ -521,51 +531,72 @@ Water level GIF
           <section class="content parallax__group">
             <h2>LOBBYING</h2>
             <p class="boxDark">
-              <a class="popups">Every</a> year, the world's five largest
-              publicly owned oil and gas companies spend approximately $200
-              million on lobbying designed to control, delay or block binding
-              climate-motivated policy. Some also fund anti-climate change
-              research.
+              <a class="lobbyPopups">Lobbying</a> against climate policy is a
+              huge barrier to climate action. Corporations
+              <a class="lobbyPopups">spend millions</a> on lobbying out of fear
+              that it may hurt their business practices. Many of these companies
+              do so in spite of their stated
+              <a class="lobbyPopups">commitments to action</a>.
             </p>
-            <p id="lobby" class="boxDark">
-              year
-            </p>
+            <h3 id="lobbyHead"></h3>
+            <div id="lobby" class="boxDark"></div>
           </section>
         </div>
 
         <script>
-          let popups = document.querySelectorAll(".popups");
+          let statePopups = document.querySelectorAll(".statePopups");
+          let lobbyPopups = document.querySelectorAll(".lobbyPopups");
           let lobby = document.querySelector("#lobby");
+          let lobbyHead = document.querySelector("#lobbyHead");
           let irre = document.querySelector("#irresponse");
-          for (let i = 0; i < popups.length; i++) {
-            popups[i].addEventListener("click", function () {
+          let irrHead = document.querySelector("#irrHead");
+          for (let i = 0; i < statePopups.length; i++) {
+            statePopups[i].addEventListener("click", function () {
+              if (irre.style.display == "" || irre.style.display == "none") {
+                irre.style.display = "block";
+              }
               switch (i) {
                 case 0:
-                  console.log(irre.style.display);
-                  //
-                  if (
-                    irre.style.display == "" ||
-                    irre.style.display == "none"
-                  ) {
-                    console.log("invisible");
-                    irre.style.display = "block";
-                  } else {
-                    console.log("visible");
-                    irre.style.display = "none";
-                  }
+                  irrHead.innerHTML = "Comprehensive Policy";
+                  irre.innerHTML =
+                    "A comprehensive policy would place market-based limits and incentives to reduce GHG emissions. Programs include the Regional Greenhouse Gas Initiative in the northeast and cap policies on the west coast.";
 
                   break;
                 case 1:
-                  if (
-                    lobby.style.display == "" ||
-                    lobby.style.display == "none"
-                  ) {
-                    console.log("invisible");
-                    lobby.style.display = "block";
-                  } else {
-                    console.log("visible");
-                    lobby.style.display = "none";
-                  }
+                  irrHead.innerHTML = "Only 12 states";
+                  irre.innerHTML =
+                    "One key state lacking regulations is Texas. The state emits more GHG emissions than the petroleum and natural gas sector!";
+
+                  break;
+                case 2:
+                  irrHead.innerHTML = "... and varying success";
+                  irre.innerHTML =
+                    "Even California, which is hailed as an example of a good cap-and-trade program, has fallen victim to corporate lobbying. This has resulted in inefficient policy.";
+
+                  break;
+              }
+            });
+          }
+
+          for (let i = 0; i < lobbyPopups.length; i++) {
+            lobbyPopups[i].addEventListener("click", function () {
+              if (lobby.style.display == "" || lobby.style.display == "none") {
+                lobby.style.display = "block";
+              }
+              switch (i) {
+                case 0:
+                  lobbyHead.innerHTML = "";
+                  lobby.innerHTML = "yes";
+
+                  break;
+                case 1:
+                  lobbyHead.innerHTML = "";
+                  lobby.innerHTML = "yes";
+
+                  break;
+                case 2:
+                  lobbyHead.innerHTML = "";
+                  lobby.innerHTML = "yes";
 
                   break;
               }
@@ -637,31 +668,26 @@ Water level GIF
                 console.log(move);
               };
             }
-
-            // window.ondeviceorientation = function (event) {
-            //   var x = event.gamma;
-            //   var y = event.alpha;
-
-            //   let move = `translate(${x * 0.8}px,${y * 0.8}px)`;
-
-            //   for (let bg of bgAll) {
-            //     bg.style.transform = move;
-            //   }
-
-            //   console.log(move);
-            // };
           </script>
         </div>
 
         <div id="nxtStep" class="scroll-center parallax__group z1 txtDark">
           <section class="content parallax__group" id="5">
             <div class="bg-vid parallax__layer parallax__layer--base">
-              <video id="vid" poster="images/green_future.png" src="images/water_receding.mp4" type="video/mp4" playsinline preload muted>
-                <!-- <source src="images/water_receding.mp4" type="video/mp4" /> -->
+              <video
+                id="vid"
+                poster="images/green_future.png"
+                src="images/water_receding.mp4"
+                type="video/mp4"
+                playsinline
+                autoplay
+                preload
+                muted
+              >
+                Your browser does not support the video tag.
               </video>
             </div>
             <h2>Next Steps</h2>
-            <h2 id="stink">""</h2>
             <div id="socials">
               <a
                 href="https://nocapteam.github.io/"
@@ -687,7 +713,7 @@ Water level GIF
 
             <a
               class="twtTrig"
-              href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Static%20Template&tw_p=tweetbutton&url=file%3A%2F%2F%2FUsers%2FHuggie%2FDesktop%2Fcapstone%2Findex.html"
+              href="https://twitter.com/intent/tweet?ref_src=twsrc%5Etfw&text=Static%20Template&tw_p=tweetbutton&url=https://nocapteam.github.io/"
             >
               Actual Tweet
             </a>
@@ -699,30 +725,10 @@ Water level GIF
               nextButton.addEventListener("click", function () {
                 nextStep.style.display = "block";
                 vid.play();
-                document.getElementById("5").scrollIntoView({ behavior: "smooth" });
+                document
+                  .getElementById("5")
+                  .scrollIntoView({ behavior: "smooth" });
               });
-
-              let stink = document.querySelector("#stink");
-              vid.onwaiting = (e) => {
-                console.log('Waiting');
-                stink.innerHTML = 'Waiting';
-              }
-              vid.onsuspend = (e) => {
-                console.log('Suspended');
-                stink.innerHTML = 'Suspended';
-              }
-              vid.onloadeddata = (e) => {
-                console.log('Data loaded.');
-                stink.innerHTML = 'Data loaded.';
-              }
-              vid.onplay = (e) => {
-                console.log('Now playing.');
-                stink.innerHTML = 'Now playing.';
-              }
-              vid.onended = (e) => {
-                console.log('Ended.');
-                stink.innerHTML = 'Ended.';
-              }
             </script>
           </section>
         </div>

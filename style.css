@@ -398,8 +398,10 @@ footer {
   display: none;
 }
 
-.popups {
+.statePopups,
+.lobbyPopups {
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .backbuild {
