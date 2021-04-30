@@ -87,7 +87,7 @@ Water level GIF
           <img id="volume" src="images/volume.png" />
         </figure>
 
-        <p id="mobAudio">Tap Here for Audio</p>
+        <p id="mobAudio">Tap Here 4 Audio</p>
 
         <script>
           let volume = document.querySelector("#volume");
@@ -678,13 +678,29 @@ Water level GIF
               });
 
               let stink = document.querySelector("#stink");
-              video.addEventListener('ended', (event) => {
+              video.onended = (e) => {
                 console.log('Ended.');
                 stink.innerHTML = 'Ended.';
-              });
-              video.onplaying = (e) => {
+              }
+              video.onplay = (e) => {
                 console.log('Now playing.');
                 stink.innerHTML = 'Now playing.';
+              }
+              video.onloadeddata = (e) => {
+                console.log('Data loaded.');
+                stink.innerHTML = 'Data loaded.';
+              }
+              video.onwaiting = (e) => {
+                console.log('Waiting');
+                stink.innerHTML = 'Waiting';
+              }
+              video.onsuspend = (e) => {
+                console.log('Suspended');
+                stink.innerHTML = 'Suspended';
+              }
+              video.onemptied = (e) => {
+                console.log('Emptied');
+                stink.innerHTML = 'Emptied';
               }
             </script>
           </section>
