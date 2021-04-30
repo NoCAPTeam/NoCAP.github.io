@@ -87,7 +87,7 @@ Water level GIF
           <img id="volume" src="images/volume.png" />
         </figure>
 
-        <p id="mobAudio">Tap Here for Audio</p>
+        <p id="mobAudio">Tap Here 4 Audio</p>
 
         <script>
           let volume = document.querySelector("#volume");
@@ -186,19 +186,19 @@ Water level GIF
 
           menuButton.addEventListener("click", toggleMenu);
 
-          intro.onclick = (e) => {
+          document.getElementByID("intro").onclick = (e) => {
             document.getElementById("1").scrollIntoView({ behavior: "smooth" });
             toggleMenu();
           };
-          who.onclick = (e) => {
+          document.getElementByID("who").onclick = (e) => {
             document.getElementById("2").scrollIntoView({ behavior: "smooth" });
             toggleMenu();
           };
-          how.onclick = (e) => {
+          document.getElementByID("how").onclick = (e) => {
             document.getElementById("3").scrollIntoView({ behavior: "smooth" });
             toggleMenu();
           };
-          what.onclick = (e) => {
+          document.getElementByID("what").onclick = (e) => {
             document.getElementById("4").scrollIntoView({ behavior: "smooth" });
             toggleMenu();
           };
