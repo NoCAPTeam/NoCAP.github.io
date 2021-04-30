@@ -288,7 +288,7 @@ p {
 }
 
 footer {
-  position: fixed;
+  position: absolute;
   bottom: 4rem;
 }
 
@@ -435,8 +435,8 @@ button {
 }
 
 .bg-vid video {
-  min-height: 200%;
-  min-width: 100%;
+  max-height: 200%;
+  object-fit: cover;
 }
 
 @media (min-width: 768px) {
@@ -467,9 +467,37 @@ button {
   }
 }
 
-@media (width: 800px) and (height: 1200px) {
+@media (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+  #menu .logo {
+    margin: 2rem 40%;
+  }
+
+  .content {
+    margin: 0 6rem;
+  }
+
+  .bg-vid {
+    margin: 0 -6rem;
+  }
+
+  .waterRise {
+    margin: 0px;
+  }
+
+  .waterRise h2,
+  .box1 > *,
+  .box2 > * {
+    margin-left: 6rem;
+    margin-right: 6rem;
+  }
+}
+
+@media (width: 768px) and (height: 1024px) {
   .bg-vid video {
-    max-height: 200%;
+    width: 100%;
   }
 }
 
@@ -487,12 +515,13 @@ button {
   .wrapper,
   header,
   #menu {
-    width: 540px;
+    max-width: 540px;
   }
+
   .wrapper,
   #menu,
   .scroll-container {
-    height: 920px;
+    max-height: 920px;
   }
 
   #mobAudio {

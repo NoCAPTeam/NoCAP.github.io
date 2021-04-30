@@ -83,8 +83,11 @@ Water level GIF
             type="audio/wav"
           />
         </audio>
-        <figure><img id="volume" src="images/volume.png" /></figure>
-        <p id="mobAudio">Tap here for audio</p>
+        <figure>
+          <img id="volume" src="images/volume.png" />
+          <p id="mobAudio">Tap here for audio</p>
+        </figure>
+
         <script>
           let volume = document.querySelector("#volume");
           let audio = document.querySelector("#audio");
@@ -100,7 +103,7 @@ Water level GIF
           });
 
           mobAudio.addEventListener("click", function () {
-            audio.play;
+            audio.play();
             mobAudio.style.display = "none";
           });
 
@@ -626,7 +629,7 @@ Water level GIF
         <div id="nxtStep" class="scroll-center parallax__group z1 txtDark">
           <section class="content parallax__group">
             <div class="bg-vid parallax__layer parallax__layer--base">
-              <video autoplay preload muted>
+              <video id="video" autoplay preload muted>
                 <source src="images/water_receding.mp4" type="video/mp4" />
               </video>
             </div>
@@ -664,9 +667,12 @@ Water level GIF
             <script>
               let nextButton = document.querySelector("#nxtBut");
               let nextStep = document.querySelector("#nxtStep");
+              let video = document.querySelector("#video");
               nextButton.addEventListener("click", function () {
                 //nextStep.style.visibility = "visible";
+
                 nextStep.style.display = "block";
+                video.play();
               });
             </script>
           </section>
