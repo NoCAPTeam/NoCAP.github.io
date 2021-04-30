@@ -206,31 +206,57 @@ Water level GIF
           function navBold() {
             scrollPos = document.querySelector(".scroll-container").scrollTop;
             bullets = document.getElementsByClassName("bullet");
-            if (scrollPos < window.innerHeight * 6) {
-              clearBoldClass();
-              document.getElementById("intro").classList.add("boldAnc");
-              bullets[0].classList.add("big");
-            } else if (
-              window.innerHeight * 6 <= scrollPos &&
-              scrollPos < window.innerHeight * 11
-            ) {
-              clearBoldClass();
-              document.getElementById("who").classList.add("boldAnc");
-              bullets[1].classList.add("big");
-            } else if (
-              window.innerHeight * 11 <= scrollPos &&
-              scrollPos < window.innerHeight * 15
-            ) {
-              clearBoldClass();
-              document.getElementById("how").classList.add("boldAnc");
-              bullets[2].classList.add("big");
-            } else if (window.innerHeight * 15 <= scrollPos) {
-              clearBoldClass();
-              document.getElementById("what").classList.add("boldAnc");
-              bullets[3].classList.add("big");
+            if (document.body.clientWidth <= 800){
+              if (scrollPos < window.innerHeight * 6) {
+                clearBoldClass();
+                document.getElementById("intro").classList.add("boldAnc");
+                bullets[0].classList.add("big");
+              } else if (
+                window.innerHeight * 6 <= scrollPos &&
+                scrollPos < window.innerHeight * 11
+              ) {
+                clearBoldClass();
+                document.getElementById("who").classList.add("boldAnc");
+                bullets[1].classList.add("big");
+              } else if (
+                window.innerHeight * 11 <= scrollPos &&
+                scrollPos < window.innerHeight * 15
+              ) {
+                clearBoldClass();
+                document.getElementById("how").classList.add("boldAnc");
+                bullets[2].classList.add("big");
+              } else if (window.innerHeight * 15 <= scrollPos) {
+                clearBoldClass();
+                document.getElementById("what").classList.add("boldAnc");
+                bullets[3].classList.add("big");
+              }
+            } else if (document.body.clientWidth > 800){
+              newWinHeight = document.querySelector(".wrapper").clientHeight;
+              if (scrollPos < newWinHeight * 6) {
+                clearBoldClass();
+                document.getElementById("intro").classList.add("boldAnc");
+                bullets[0].classList.add("big");
+              } else if (
+                newWinHeight * 6 <= scrollPos &&
+                scrollPos < newWinHeight * 11
+              ) {
+                clearBoldClass();
+                document.getElementById("who").classList.add("boldAnc");
+                bullets[1].classList.add("big");
+              } else if (
+                newWinHeight * 11 <= scrollPos &&
+                scrollPos < newWinHeight * 15
+              ) {
+                clearBoldClass();
+                document.getElementById("how").classList.add("boldAnc");
+                bullets[2].classList.add("big");
+              } else if (newWinHeight * 15 <= scrollPos) {
+                clearBoldClass();
+                document.getElementById("what").classList.add("boldAnc");
+                bullets[3].classList.add("big");
+              }
             }
           }
-
           function clearBoldClass() {
             let links = document.getElementById("linkCont").children;
             for (let link of links) {
