@@ -394,13 +394,9 @@ footer {
   margin-bottom: 1rem;
 }
 
-/* #nxtStep {
+#nxtStep {
   display: none;
-} */
-
-/* #nxtStep {
-  visibility: hidden;
-} */
+}
 
 .popups {
   text-decoration: underline;

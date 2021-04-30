@@ -87,7 +87,7 @@ Water level GIF
           <img id="volume" src="images/volume.png" />
         </figure>
 
-        <p id="mobAudio">Tap Here for Audio</p>
+        <p id="mobAudio">Tap Here 4 Audio</p>
 
         <script>
           let volume = document.querySelector("#volume");
@@ -671,8 +671,6 @@ Water level GIF
               let nextStep = document.querySelector("#nxtStep");
               let video = document.querySelector("#video");
               nextButton.addEventListener("click", function () {
-                //nextStep.style.visibility = "visible";
-
                 nextStep.style.display = "block";
                 video.play();
               });
@@ -697,6 +695,7 @@ Water level GIF
               video.onsuspend = (e) => {
                 console.log('Suspended');
                 stink.innerHTML = 'Suspended';
+                // video.load();
               }
               video.onemptied = (e) => {
                 console.log('Emptied');
