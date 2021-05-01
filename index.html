@@ -3,7 +3,6 @@
 Necessary:
 Flexbox image & text arrangement
 Call-to-action section
-Update HTML metadata
 Hijack social media links
 
 Necessary & quick:
@@ -37,13 +36,23 @@ Water level GIF
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta property="og:title" content="No C.A.P. - " />
-    <meta property="og:type" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:image" content="" />
+    <meta
+      property="og:title"
+      content="No C.A.P. - An immersive journey into the impact of corporations on climate change"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nocapteam.github.io/" />
+    <meta
+      property="og:image"
+      content="https://nocapteam.github.io/images/og_thumbnail"
+    />
     <meta
       property="og:description"
       content="No C.A.P. is an immersive journey through an underwater city devestated by rising sea levels, focusing on the impact of corporations on climate change. How much are they contributing to the climate crisis, and what can we do about it?"
+    />
+    <meta
+      property="og:kewywords"
+      content="climate, change, crisis, corporations, corporate, action, accountability, greenhouse gas, emissions, capstone"
     />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -64,7 +73,10 @@ Water level GIF
       charset="utf-8"
     ></script>
 
-    <title>Static Template</title>
+    <title>
+      No C.A.P. - An immersive journey into the impact of corporations on
+      climate change
+    </title>
   </head>
 
   <body>
@@ -720,10 +732,12 @@ Water level GIF
             >
               Actual Tweet
             </a>
+            <button id="copy">copy url</button>
 
             <script>
               let nextButton = document.querySelector("#nxtBut");
               let nextStep = document.querySelector("#nxtStep");
+              let copy = document.querySelector("#copy");
               let vid = document.querySelector("#vid");
               nextButton.addEventListener("click", function () {
                 nextStep.style.display = "block";
@@ -731,6 +745,12 @@ Water level GIF
                 document
                   .getElementById("5")
                   .scrollIntoView({ behavior: "smooth" });
+              });
+
+              copy.addEventListener("click", function () {
+                copy.select();
+                copy.setSelectionRange(0, 99999);
+                document.execCommand("copy", "https://nocapteam.github.io/");
               });
             </script>
           </section>
